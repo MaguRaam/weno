@@ -30,11 +30,11 @@ void \hyperlink{classweno_1_1_stencil_a765c64da48da663c23b80f397386f9f9}{initial
 \hyperlink{classweno_1_1_stencil}{Stencil} \& \hyperlink{classweno_1_1_stencil_aa336788a2665ff4dde40bf0dd853a9aa}{operator=} (\hyperlink{classweno_1_1_stencil}{Stencil} \&\&)=default
 \begin{DoxyCompactList}\small\item\em move assignment to steal data from temporary object \end{DoxyCompactList}\item 
 \hyperlink{classweno_1_1_stencil_adadca4d1773a270be6a84a0e9b7c7b0c}{$\sim$\+Stencil} ()=default
-\begin{DoxyCompactList}\small\item\em Destroy the Cell Map object. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Destroy the stencil object. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classweno_1_1_stencil_a094f79cdf961bfcab7ff7af5d5faf204}{no\+\_\+relevant\+\_\+cells} () const
 \begin{DoxyCompactList}\small\item\em the function returns the no of relevant cells\+: n\+\_\+relevant\+\_\+cells = locally owned cells + 1 layer of face sharing ghost cells \end{DoxyCompactList}\item 
-std\+::set$<$ \hyperlink{classweno_1_1_stencil_a5a730ad61bd5e9c36a86ccb36578f42c}{active\+\_\+cell\+\_\+iterator} $>$ \hyperlink{classweno_1_1_stencil_ace32c426133dae0d0fcb0d35f687c0ef}{central\+\_\+stencil\+\_\+constrained} (const unsigned int \&relevant\+\_\+cell\+\_\+index) const
-\begin{DoxyCompactList}\small\item\em Given the local relevant cell index the function returns the constrained part of the central stencil. These are simply the face neighbors of the cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+const std\+::set$<$ \hyperlink{classweno_1_1_stencil_a5a730ad61bd5e9c36a86ccb36578f42c}{active\+\_\+cell\+\_\+iterator} $>$ \& \hyperlink{classweno_1_1_stencil_a5f739b2659593d8c83b02a01a003d6a5}{central\+\_\+stencil\+\_\+constrained} (unsigned int relevant\+\_\+cell\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Given the locally relevant cell index, the function returns the constrained part of the central stencil. These are simply the face neighbors of the cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -120,21 +120,21 @@ move constructor to steal data from temporary object
 
 
 
-Destroy the Cell Map object. 
+Destroy the stencil object. 
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classweno_1_1_stencil_ace32c426133dae0d0fcb0d35f687c0ef}\label{classweno_1_1_stencil_ace32c426133dae0d0fcb0d35f687c0ef}} 
+\mbox{\Hypertarget{classweno_1_1_stencil_a5f739b2659593d8c83b02a01a003d6a5}\label{classweno_1_1_stencil_a5f739b2659593d8c83b02a01a003d6a5}} 
 \index{weno\+::\+Stencil@{weno\+::\+Stencil}!central\+\_\+stencil\+\_\+constrained@{central\+\_\+stencil\+\_\+constrained}}
 \index{central\+\_\+stencil\+\_\+constrained@{central\+\_\+stencil\+\_\+constrained}!weno\+::\+Stencil@{weno\+::\+Stencil}}
 \subsubsection{\texorpdfstring{central\+\_\+stencil\+\_\+constrained()}{central\_stencil\_constrained()}}
 {\footnotesize\ttfamily template$<$int dim$>$ \\
-std\+::set$<$\hyperlink{classweno_1_1_stencil_a5a730ad61bd5e9c36a86ccb36578f42c}{active\+\_\+cell\+\_\+iterator}$>$ \hyperlink{classweno_1_1_stencil}{weno\+::\+Stencil}$<$ dim $>$\+::central\+\_\+stencil\+\_\+constrained (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{relevant\+\_\+cell\+\_\+index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+const std\+::set$<$\hyperlink{classweno_1_1_stencil_a5a730ad61bd5e9c36a86ccb36578f42c}{active\+\_\+cell\+\_\+iterator}$>$\& \hyperlink{classweno_1_1_stencil}{weno\+::\+Stencil}$<$ dim $>$\+::central\+\_\+stencil\+\_\+constrained (\begin{DoxyParamCaption}\item[{unsigned int}]{relevant\+\_\+cell\+\_\+index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Given the local relevant cell index the function returns the constrained part of the central stencil. These are simply the face neighbors of the cell. 
+Given the locally relevant cell index, the function returns the constrained part of the central stencil. These are simply the face neighbors of the cell. 
 
 For example in 2d the constrained part of central stencil looks like.
 
